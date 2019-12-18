@@ -1,0 +1,51 @@
+
+#include <stdio.h>
+
+int main(void)
+{
+	int hour, minute, mins_since_midnight;
+
+	printf("\nThe following table shows the daily flights from one city to another: \n");
+	printf("\n");
+	printf("Departure time     Arrival time\n");
+	printf("8: 00 am           10 : 16 am\n");
+	printf("9 : 43 am          11 : 52 am\n");
+	printf("11 : 19 am         1 : 31 pm\n");
+	printf("12 : 47 pm         3 : 00 pm\n");
+	printf("2 : 00 pm          4 : 08 pm\n");
+	printf("3: 45 pm           5 : 55 pm\n");
+	printf("7 : 00 pm          9 : 20 pm\n");
+	printf("9 : 45 pm          11 : 58 pm\n");
+
+		int selection = 0;
+	while (selection != 2)
+	{
+
+		printf("\n Please enter a time(hh:mm): ");
+		scanf_s("%2d :%2d", &hour, &minute);
+		mins_since_midnight = (hour * 60) + minute;
+
+		if (mins_since_midnight <= ((8 * 60) + (103 / 2)))
+			printf("Closest departure time is 8:00 AM., arriving at 10:16 AM\n");
+		else if (mins_since_midnight < ((9 * 60) + 43) + (96 / 2))
+			printf("Closest departure time is 9:43 AM., arriving at 11:52 AM\n");
+		else if (mins_since_midnight < ((11 * 60) + 19) + (88 / 2))
+			printf("Closest departure time is 11:19 AM., arriving at 1:31 PM\n");
+		else if (mins_since_midnight <= ((12 * 60) + 47) + (73 / 2))
+			printf("Closest departure time is 12:47 PM., arriving at 3:00 PM\n");
+		else if (mins_since_midnight <= ((14 * 60) + (105 / 2)))
+			printf("Closest departure time is 2:00 PM., arriving at 4:08 PM\n");
+		else if (mins_since_midnight <= ((15 * 60) + 45) + (195 / 2))
+			printf("Closest departure time is 3:45 PM., arriving at 5:55 PM\n");
+		else if (mins_since_midnight <= ((19 * 60) + (165 / 2)))
+			printf("Closest departure time is 7:00 PM., arriving at 9:20 PM\n");
+		else
+			printf("Closest departure time is 9:45 PM., arriving at 11:58 PM\n");
+
+		printf("DO you want to continue or not?\n");
+		printf("Choose \n 1 for yes \n 2 for no\n");
+		scanf_s("%d", &selection);
+	}
+	system("pause");
+	return 0;
+}
